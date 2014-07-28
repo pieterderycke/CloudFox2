@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudFox2.Phone", "CloudFox2.Phone\CloudFox2.Phone.csproj", "{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Debug|ARM.ActiveCfg = Debug|ARM
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Debug|ARM.Build.0 = Debug|ARM
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Debug|ARM.Deploy.0 = Debug|ARM
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Debug|x86.ActiveCfg = Debug|x86
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Debug|x86.Build.0 = Debug|x86
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Debug|x86.Deploy.0 = Debug|x86
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Release|ARM.ActiveCfg = Release|ARM
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Release|ARM.Build.0 = Release|ARM
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Release|ARM.Deploy.0 = Release|ARM
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Release|x86.ActiveCfg = Release|x86
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Release|x86.Build.0 = Release|x86
+		{AF3CE336-C62D-4D20-ACB7-922BF4704E3D}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
