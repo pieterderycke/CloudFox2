@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CloudFox2.Phone.Views;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
