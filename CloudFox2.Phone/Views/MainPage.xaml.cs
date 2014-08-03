@@ -1,4 +1,5 @@
-﻿using CloudFox2.Phone.Views;
+﻿using CloudFox2.Phone.Common;
+using CloudFox2.Phone.Views;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,11 +24,15 @@ namespace CloudFox2.Phone.Views
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private SettingManager settingManager;
+
         public MainPage()
         {
             this.InitializeComponent();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
+
+            this.settingManager = new SettingManager();
         }
 
         /// <summary>
@@ -37,6 +42,8 @@ namespace CloudFox2.Phone.Views
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            base.OnNavigatedTo(e);
+
             // TODO: Prepare page for display here.
 
             // TODO: If your application contains multiple pages, ensure that you are
@@ -48,7 +55,8 @@ namespace CloudFox2.Phone.Views
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(LoginPage));
+            if(settingManager.IsLoggedIn)
+                Frame.Navigate(typeof(ChooseLoginPage));
         }
     }
 }

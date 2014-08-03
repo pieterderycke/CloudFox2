@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="CloudFox2.Phone.Views.LoginPage"
+    x:Class="CloudFox2.Phone.Views.ChooseLoginPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CloudFox2.Phone.Views"
@@ -23,15 +23,14 @@
 
         <!-- Title Panel -->
         <StackPanel Grid.Row="0" Margin="19,0,0,0">
-            <TextBlock x:Uid="ApplicationName" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock x:Uid="ApplicationName" Text="CLOUDFOX" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
             <TextBlock Text="login" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
         </StackPanel>
 
         <!--TODO: Content should be placed within the following grid-->
         <StackPanel Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
-            <TextBox TextWrapping="Wrap" Header="Email" InputScope="EmailSmtpAddress" Text="{Binding UserName, Mode=TwoWay}"/>
-            <PasswordBox Margin="0,8,0,0" Header="Password" Password="{Binding Password, Mode=TwoWay}"/>
-            <Button Content="Sign In"  Margin="0,8,0,0" HorizontalAlignment="Stretch" Command="{Binding SignIn}"/>
+            <Button Content="Create Account" HorizontalAlignment="Stretch"/>
+            <Button Content="Sign In" HorizontalAlignment="Stretch" Command="{Binding SignIn}"/>
         </StackPanel>
     </Grid>
 </Page>

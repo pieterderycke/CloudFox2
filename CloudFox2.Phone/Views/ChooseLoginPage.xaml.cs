@@ -17,14 +17,18 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+// The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
+
 namespace CloudFox2.Phone.Views
 {
-    public sealed partial class LoginPage : Page
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class ChooseLoginPage : Page
     {
         private NavigationHelper navigationHelper;
-        private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
-        public LoginPage()
+        public ChooseLoginPage()
         {
             this.InitializeComponent();
 
@@ -32,7 +36,7 @@ namespace CloudFox2.Phone.Views
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
-            this.DataContext = new LoginViewModel(new SettingManager(), new NavigationService());
+            this.DataContext = new ChooseLoginViewModel(new NavigationService());
         }
 
         /// <summary>
@@ -41,15 +45,6 @@ namespace CloudFox2.Phone.Views
         public NavigationHelper NavigationHelper
         {
             get { return this.navigationHelper; }
-        }
-
-        /// <summary>
-        /// Gets the view model for this <see cref="Page"/>.
-        /// This can be changed to a strongly typed view model.
-        /// </summary>
-        public ObservableDictionary DefaultViewModel
-        {
-            get { return this.defaultViewModel; }
         }
 
         /// <summary>
