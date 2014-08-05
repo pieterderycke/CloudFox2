@@ -9,6 +9,39 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
 
     <Grid>
-
+        <Hub Header="Cloudfox">
+            <HubSection Header="Tabs">
+                <DataTemplate>
+                    <Grid />
+                </DataTemplate>
+            </HubSection>
+            <HubSection Header="Bookmarks">
+                <DataTemplate>
+                    <ListView ItemsSource="{Binding Bookmarks}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Title}" Style="{ThemeResource ListViewItemContentTextBlockStyle}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </DataTemplate>
+            </HubSection>
+            <HubSection Header="History">
+                <DataTemplate>
+                    <Grid />
+                </DataTemplate>
+            </HubSection>
+        </Hub>
     </Grid>
+    
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Uid="Refresh" Label="Refresh" Icon="Refresh" Command="{Binding Refresh}"/>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Uid="SignOut" Label="Sign Out" Command="{Binding SignOut}"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

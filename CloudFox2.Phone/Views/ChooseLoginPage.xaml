@@ -1,4 +1,4 @@
-﻿<Page
+﻿<local:PageBase
     x:Class="CloudFox2.Phone.Views.ChooseLoginPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -33,4 +33,4 @@
             <Button Content="Sign In" HorizontalAlignment="Stretch" Command="{Binding SignIn}"/>
         </StackPanel>
     </Grid>
-</Page>
+</local:PageBase>

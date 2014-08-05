@@ -16,14 +16,13 @@ namespace CloudFox2.Phone.ViewModels
         private readonly SettingManager settingManager;
         private readonly INavigationService navigationService;
 
-        public LoginViewModel(SettingManager settingManager, INavigationService navigationService)
+        public LoginViewModel(SettingManager settingManager, INavigationService navigationService, SyncClient syncClient)
         {
             this.settingManager = settingManager;
             this.navigationService = navigationService;
 
             this.SignIn = new RelayCommand(async () => 
             {
-                SyncClient syncClient = new SyncClient();
                 await syncClient.SignIn(UserName, Password);
                 settingManager.Save();
 

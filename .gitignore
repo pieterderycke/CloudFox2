@@ -212,3 +212,8 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+
+################
+## CloudFox 2 specific
+################
+CloudFox2.Phone/analytics.xml

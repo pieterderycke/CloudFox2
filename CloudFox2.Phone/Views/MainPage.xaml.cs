@@ -1,4 +1,5 @@
 ﻿using CloudFox2.Phone.Common;
+using CloudFox2.Phone.ViewModels;
 using CloudFox2.Phone.Views;
 using System;
 using System.Collections.Generic;
@@ -15,13 +16,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
-
 namespace CloudFox2.Phone.Views
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
         private SettingManager settingManager;
@@ -32,7 +28,8 @@ namespace CloudFox2.Phone.Views
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
 
-            this.settingManager = new SettingManager();
+            this.settingManager = AutofacResolver.Resolve<SettingManager>();
+            this.DataContext = AutofacResolver.Resolve<MainViewModel>();
         }
 
         /// <summary>
@@ -55,8 +52,10 @@ namespace CloudFox2.Phone.Views
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            if(settingManager.IsLoggedIn)
+            if(!settingManager.IsLoggedIn)
                 Frame.Navigate(typeof(ChooseLoginPage));
+
+            ((MainViewModel)DataContext).Refresh.Execute(null);
         }
     }
 }
