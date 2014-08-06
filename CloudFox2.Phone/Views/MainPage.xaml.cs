@@ -18,36 +18,18 @@ using Windows.UI.Xaml.Navigation;
 
 namespace CloudFox2.Phone.Views
 {
-    public sealed partial class MainPage : Page
+    public sealed partial class MainPage : PageBase
     {
         private SettingManager settingManager;
 
         public MainPage()
         {
             this.InitializeComponent();
+            this.IntialiazeViewModel<MainViewModel>();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
 
             this.settingManager = AutofacResolver.Resolve<SettingManager>();
-            this.DataContext = AutofacResolver.Resolve<MainViewModel>();
-        }
-
-        /// <summary>
-        /// Invoked when this page is about to be displayed in a Frame.
-        /// </summary>
-        /// <param name="e">Event data that describes how this page was reached.
-        /// This parameter is typically used to configure the page.</param>
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);
-
-            // TODO: Prepare page for display here.
-
-            // TODO: If your application contains multiple pages, ensure that you are
-            // handling the hardware Back button by registering for the
-            // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
-            // If you are using the NavigationHelper provided by some templates,
-            // this event is handled for you.
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -56,6 +38,14 @@ namespace CloudFox2.Phone.Views
                 Frame.Navigate(typeof(ChooseLoginPage));
 
             ((MainViewModel)DataContext).Refresh.Execute(null);
+        }
+
+        private void OnBookmarkTapped(object sender, TappedRoutedEventArgs e)
+        {
+            MainViewModel viewModel = (MainViewModel)DataContext;
+            BookmarkViewModel bookmark = (BookmarkViewModel)((TextBlock)sender).DataContext;
+
+            viewModel.OpenBookmark(bookmark);
         }
     }
 }

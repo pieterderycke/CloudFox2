@@ -120,10 +120,16 @@
   <data name="ApplicationName.Text" xml:space="preserve">
     <value>CLOUDFOX</value>
   </data>
+  <data name="Home.Label" xml:space="preserve">
+    <value>Home</value>
+  </data>
   <data name="Refresh.Label" xml:space="preserve">
     <value>Refresh</value>
   </data>
   <data name="SignOut.Label" xml:space="preserve">
     <value>Sign Out</value>
+  </data>
+  <data name="Up.Label" xml:space="preserve">
+    <value>Up</value>
   </data>
 </root>

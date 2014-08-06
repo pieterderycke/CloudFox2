@@ -8,21 +8,21 @@ namespace CloudFox2.Phone.ViewModels
 {
     public class BookmarkViewModel
     {
-        private readonly IList<BookmarkViewModel> childs;
+        private readonly IList<BookmarkViewModel> children;
 
         public BookmarkViewModel(string title)
         {
-            this.childs = new List<BookmarkViewModel>();
+            this.children = new List<BookmarkViewModel>();
             this.Title = title;
         }
 
         public string Title { get; private set; }
 
-        public IEnumerable<BookmarkViewModel> Childs { get { return childs; } }
+        public IEnumerable<BookmarkViewModel> Children { get { return children; } }
 
         public void AddChild(BookmarkViewModel bookmark)
         {
-            childs.Add(bookmark);
+            children.Add(bookmark);
         }
     }
 }
